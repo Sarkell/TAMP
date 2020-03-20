@@ -12,19 +12,31 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
+import java.net.URI;
 import java.util.List;
 
 
 public class StepDefinitions {
-    private static WebDriver driver;
+    private static RemoteWebDriver driver;
     private MainPage mainPage;
     private SearchPage searchPage;
 
     @Before
-    public static void setupClass() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+    public static void setupClass() throws MalformedURLException {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setBrowserName("chrome");
+        capabilities.setVersion("80.0");
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
+
+        driver = new RemoteWebDriver(
+                URI.create("http://18.237.106.91:4444/wd/hub").toURL(),
+                capabilities
+        );
     }
 
     @Given("Customer open site")
