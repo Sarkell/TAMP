@@ -1,6 +1,6 @@
 #!Groovy
 
-node(params.EXECUTORS_LABEL) {
+node("linux_slave") {
     stage('Checkout') {
         deleteDir()
         checkout scm
