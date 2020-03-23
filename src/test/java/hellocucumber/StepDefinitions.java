@@ -29,9 +29,9 @@ public class StepDefinitions {
     public static void setupClass() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setBrowserName("chrome");
-        capabilities.setVersion("80.0");
+        capabilities.setVersion("64.0");
         capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", true);
+        capabilities.setCapability("enableVideo", false);
 
         driver = new RemoteWebDriver(
                 URI.create("http://18.237.106.91:4444/wd/hub").toURL(),
