@@ -34,7 +34,7 @@ public class StepDefinitions {
         capabilities.setCapability("enableVideo", true);
 
         driver = new RemoteWebDriver(
-                URI.create("http://18.237.106.91:4444/wd/hub").toURL(),
+                URI.create("http://34.217.145.51:4444/wd/hub").toURL(),
                 capabilities
         );
     }
