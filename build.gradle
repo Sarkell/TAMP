@@ -1,0 +1,13 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+group = 'JBehave_Sample'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = '1.8'
+

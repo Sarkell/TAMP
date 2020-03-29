@@ -1,0 +1,6 @@
+rootProject.name = 'TAMP'
+include 'TAMP2'
+include 'TAMP7_1'
+include 'TAMP7_2'
+include 'TAMP7_3'
+include 'TAMP8'
