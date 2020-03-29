@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:1.1.1")
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile group: 'net.serenity-bdd', name: 'serenity-core', version: '2.2.0'
+    compile group: 'net.serenity-bdd', name: 'serenity-junit', version: '2.2.0'
+    compile group: 'net.serenity-bdd', name: 'serenity-jbehave', version: '1.46.0'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
+
+}
+
+test {
+    include '**/AcceptanceTests*'
+    systemProperties System.getProperties()
+    ignoreFailures = true
+    testLogging {
+        exceptionFormat = 'full'
+        showStandardStreams = true
+    }
+}
+
+group = 'JBehave_Sample'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = '1.8'
+
