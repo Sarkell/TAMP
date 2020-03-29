@@ -12,7 +12,7 @@
 *.rar
 
 *.iml
-.idea/
+TAMP2/.idea/
 out/
 */target/
 */test-output/
